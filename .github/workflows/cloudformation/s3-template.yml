@@ -1,1 +1,11 @@
-
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MySecureS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-compliance-demo-bucket
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
