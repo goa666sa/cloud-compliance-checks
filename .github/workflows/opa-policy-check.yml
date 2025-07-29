@@ -1,6 +1,7 @@
 name: OPA Compliance Check
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'cloudformation/**'
