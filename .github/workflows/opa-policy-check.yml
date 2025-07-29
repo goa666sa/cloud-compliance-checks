@@ -28,5 +28,5 @@ jobs:
         run: |
           opa eval --format pretty \
             --input input.json \
-            --data cloudformation/policies/ \
+            --data .github/workflows/cloudformation/policies/ \
             "data.s3.policies.deny"
