@@ -20,14 +20,9 @@ jobs:
           chmod +x opa
           sudo mv opa /usr/local/bin/
 
-      - name: List directory structure (for debugging)
-        run: |
-          echo "🗂️ Directory Structure:"
-          find . -type f
-
       - name: Convert YAML to JSON
         run: |
-          python3 -c "import sys, yaml, json; print(json.dumps(yaml.safe_load(open('cloudformation/s3-template.yml'))))" > input.json
+          python3 -c "import sys, yaml, json; print(json.dumps(yaml.safe_load(open('.github/workflows/cloudformation/s3-template.yml'))))" > input.json
 
       - name: Run OPA Policy Check
         run: |
