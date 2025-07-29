@@ -5,7 +5,7 @@ Resources:
     Properties:
       BucketName: my-compliance-demo-bucket
       PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
         IgnorePublicAcls: true
         RestrictPublicBuckets: true
