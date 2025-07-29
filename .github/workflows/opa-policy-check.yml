@@ -1,1 +1,27 @@
+name: OPA Compliance Check
 
+on:
+  push:
+    paths:
+      - 'cloudformation/**'
+      - 'policies/**'
+
+jobs:
+  opa-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install OPA
+        run: |
+          curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
+          chmod +x opa
+          sudo mv opa /usr/local/bin/
+
+      - name: Run OPA Policy Check
+        run: |
+          opa eval --format pretty \
+            --input cloudformation/s3-template.yml \
+            --data policies/ \
+            "data.s3.policies.deny"
