@@ -3,7 +3,7 @@ Resources:
   MySecureS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: my-compliance-demo-bucket
+      BucketName: my-compliance-demo-bucket-test-1
       PublicAccessBlockConfiguration:
         BlockPublicAcls: false
         BlockPublicPolicy: false
