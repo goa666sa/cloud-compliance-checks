@@ -16,7 +16,7 @@ cloud-compliance-checks/
 └── README.md
 
 ### Goals
-- Prevent common cloud misconfigurations (e.g., public S3 buckets)
+- Prevent common cloud misconfigurations (e.g. public S3 buckets)
 - Automate compliance enforcement in CI/CD pipelines
 - Build a portfolio-ready GRC + Cloud Security demo
 
